@@ -1,3 +1,4 @@
+
 <script setup>
 const msg = 'Todo App';
 </script>
@@ -7,60 +8,4 @@ const msg = 'Todo App';
     {{ msg }}
   </h1>
 
-  <div>
-    <button @click="addTask">Add New Task</button>
-    <ul>
-      <li v-for="task in tasks" :key="task">{{ task }}</li>
-    </ul>
-  </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      tasks: []
-    };
-  },
-  methods: {
-    addTask() {
-      let newTask = prompt('Please enter a new task:');
-      if (newTask) {
-        this.tasks.push(newTask);
-      }
-    }
-  }
-};
-</script>
-
-<style scoped>
-button {
-  background-color: #007BFF;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 10px 0;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  background: #eee;
-  margin: 5px 0;
-  padding: 8px;
-  border-radius: 4px;
-}
-</style>
-Option 3: M
