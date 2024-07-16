@@ -1,6 +1,7 @@
 <script setup>
 const msg = 'Todo App';
 import AddTask from './AddTask.vue';
+import ToggleButton from './ToggleButton.vue';
 
 </script>
 
@@ -10,6 +11,5 @@ import AddTask from './AddTask.vue';
     {{ msg }}
   </h1>
 <AddTask />
-
 </template>
 

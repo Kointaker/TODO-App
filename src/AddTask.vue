@@ -1,10 +1,12 @@
-
+<script setup>
+  import ToggleButton from './ToggleButton.vue';
+</script>
 <template>
 <div id="AddTask">
     
   <button @click="addTask">Add New Task</button>
     <ul>
-      <li v-for="task in tasks" :key="task">Task: {{ task }}</li>
+      <li v-for="task in tasks" :key="task">Task: {{ task }}<ToggleButton /></li>
     </ul>
   </div>
 </template>
