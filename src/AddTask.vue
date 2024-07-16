@@ -29,14 +29,14 @@ export default {
 
 <style scoped>
 button {
-  background-color: #007BFF;
+  background-color: #000000;
   border: none;
   color: white;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: 15px;
   margin: 10px 0;
   border-radius: 5px;
   cursor: pointer;

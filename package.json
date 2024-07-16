@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "jsx": "^0.9.89",
+    "primevue": "^4.0.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
