@@ -13,3 +13,17 @@ import AddTask from './AddTask.vue';
 <AddTask />
 </template>
 
+<style scoped>
+  h1 {
+    background-color: #000000;
+    border: none;
+    color: ghostwhite;
+    text-align: center;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 85px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>

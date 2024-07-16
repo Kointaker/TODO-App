@@ -33,12 +33,12 @@ export default {
 button {
   background-color: #000000;
   border: none;
-  color: white;
+  color: ghostwhite;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
+  font-size: 30px;
   margin: 10px 0;
   border-radius: 5px;
   cursor: pointer;
