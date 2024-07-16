@@ -8,9 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "jsx": "^0.9.89",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@types/vue": "^2.0.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "vite": "^4.3.9"
   }
