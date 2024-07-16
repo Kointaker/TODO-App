@@ -6,7 +6,7 @@
     
   <button @click="addTask">Add New Task</button>
     <ul>
-      <li v-for="task in tasks" :key="task">Task: {{ task }}<ToggleButton /></li>
+      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton /></li>
     </ul>
   </div>
 </template>
@@ -45,7 +45,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #C9C9C9;
 }
 
 ul {
@@ -53,10 +53,16 @@ ul {
 }
 
 li {
-  background: #B23030;
+  background: #7A3E3E;
   margin: 11px 0;
   padding: 20px;
   border-radius: 4px;
+  font-size: 24px;
+  font-weight: 1000;
+  color: #FFFFFF;
 }
+
+
+  
 </style>
 Option 3: M
