@@ -10,7 +10,11 @@ import AddTask from './AddTask.vue';
   <h1 style="text-align: center;">
     {{ msg }}
   </h1>
-<AddTask />
+
+
+  <AddTask />
+
+
 </template>
 
 <style scoped>
