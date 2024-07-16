@@ -1,7 +1,8 @@
 
 <template>
-<div>
-    <button @click="addTask">Add New Task</button>
+<div id="AddTask">
+    
+  <button @click="addTask">Add New Task</button>
     <ul>
       <li v-for="task in tasks" :key="task">Task: {{ task }}</li>
     </ul>

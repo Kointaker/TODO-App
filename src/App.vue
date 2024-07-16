@@ -1,21 +1,14 @@
-<template>
-  <div id="app">
-    <AddTask />
-  </div>
-</template>
+<script setup>
+const msg = 'Todo App';
+import AddTask from './AddTask.vue';
 
-<script>
-import AddTask from './components/AddTask.vue';
 
-export default {
-  components: {
-    AddTask
-  }
-};
-
-<AddTask />
 </script>
 
-<style>
-/* Global styles */
-</style>
+<template>
+  <h1 style="text-align: center;">
+    {{ msg }}
+  </h1>
+<AddTask />
+</template>
+
