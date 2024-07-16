@@ -49,13 +49,13 @@ button:hover {
 }
 
 ul {
-  padding: 0;
+  padding: 3;
 }
 
 li {
-  background: #eee;
-  margin: 5px 0;
-  padding: 8px;
+  background: #B23030;
+  margin: 11px 0;
+  padding: 20px;
   border-radius: 4px;
 }
 </style>
