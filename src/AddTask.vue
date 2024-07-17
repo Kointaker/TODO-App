@@ -7,7 +7,7 @@
     
   <button @click="addTask">Add New Task</button>
     <ul>
-      <li v-for="task in tasks" :key="task" @click="DeleteTask"> Task: {{ task }}<ToggleButton /></li>
+      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton /> </li>
     
     </ul>
   </div>
@@ -28,6 +28,7 @@ export default {
       }
     }
   }
+  
 };
 </script>
 
@@ -65,7 +66,6 @@ li {
 }
   li:hover{
     background-color: #7A0B0B;
-    
   }
 
 </style>
