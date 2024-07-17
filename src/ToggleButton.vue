@@ -38,10 +38,9 @@ export default {
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 40px;
   height: 17px;
   right: -10px;
-  bottom: -4.5px;
 }
 
 .switch input {
@@ -69,7 +68,7 @@ export default {
   height: 19px;
   width: 19px;
   left: -1px;
-  bottom: -2.5px;
+  bottom: -2px;
   background-color: #000000;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -89,12 +88,12 @@ input:checked + .slider:before {
   -ms-transform: translateX(31px);
   transform: translateX(15px);
   background: #81BF3F;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
   border: solid 5px #fff;
   height: 19px;
   width: 19px;
-  left: 10px;
+  left: 0px;
   right: 7px;
   bottom: -5px;
 }

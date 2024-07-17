@@ -7,7 +7,7 @@
     
   <button @click="addTask">Add New Task</button>
     <ul>
-      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton />   <DeleteTask /></li>
+      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton /> </li>
     
     </ul>
   </div>
@@ -32,10 +32,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 button {
-  display: flex;
-  justify-content: end;
   background-color: #000000;
   border: none;
   color: ghostwhite;
@@ -47,7 +45,6 @@ button {
   margin: 10px 0;
   border-radius: 5px;
   cursor: pointer;
-
 }
 
 button:hover {
