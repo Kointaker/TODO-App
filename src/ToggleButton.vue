@@ -1,13 +1,9 @@
+
 <template>
   <label class="switch">
-    <input
-      :checked="checked"
-      @change="changeInput"
-      @input="$emit('input', $event.target.checked)"
-      value="1"
-      type="checkbox"
-    >
-    <span class="slider round"/>
+    <input :checked="checked" @change="changeInput" @input="$emit('input', $event.target.checked)" value="1"
+      type="checkbox">
+    <span class="slider round" />
   </label>
 </template>
 <script>
@@ -78,15 +74,15 @@ export default {
   border: solid 1px #000000;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: transparent;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #EA1313;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(31px);
   -ms-transform: translateX(31px);
   transform: translateX(15px);

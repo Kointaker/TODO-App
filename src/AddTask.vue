@@ -1,14 +1,17 @@
 <script setup>
-  import ToggleButton from './ToggleButton.vue';
-  import DeleteTask from './DeleteTask.vue';
+import ToggleButton from './ToggleButton.vue';
+import DeleteTask from './DeleteTask.vue';
 </script>
 <template>
   <div id="AddTask">
-    
-  <button @click="addTask">Add New Task</button>
+
+    <button @click="addTask">Add New Task</button>
     <button @click="setVariable">Clear List</button>
     <ol>
-      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton />    <DeleteTask /></li>
+      <li v-for="task in tasks" :key="task"> Task: {{ task }}
+        <ToggleButton />
+        <DeleteTask />
+      </li>
 
     </ol>
   </div>
@@ -16,7 +19,7 @@
 
 <script>
 
-  export default {
+export default {
   data() {
     return {
       tasks: []
@@ -27,6 +30,7 @@
       let newTask = prompt('Please enter a new task:');
       if (newTask) {
         this.tasks.push(newTask);
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
       }
     }
   },
@@ -70,10 +74,12 @@ button:hover {
 ul {
   padding: 3;
 }
-  .deleter {
-    display: flex;
-    justify-content: flex-end;
-  }
+
+.deleter {
+  display: flex;
+  justify-content: flex-end;
+}
+
 li {
   background: #7A3E3E;
   margin: 11px 0;
@@ -83,9 +89,8 @@ li {
   font-weight: 1000;
   color: #FFFFFF;
 }
-  li:hover{
-    background-color: #7A0B0B;
-  }
 
-</style>
+li:hover {
+  background-color: #7A0B0B;
+}</style>
 Option 3: M
