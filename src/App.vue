@@ -1,8 +1,9 @@
 
 <script setup>
-const msg = 'Todo App';
+const msg = 'To-do App';
 import AddTask from './AddTask.vue';
 //import ToggleButton from './ToggleButton.vue';//
+//import DeleteTask from './DeleteTask.vue';//
 
 </script>
 
@@ -12,7 +13,10 @@ import AddTask from './AddTask.vue';
     {{ msg }}
   </h1>
 
-
+<h3 style="text-align: center;">
+INSTRUCTIONS:
+  press the Add New Task button to add a new task. Click the slider to mark a task as Complete. Hover over a task and click to delete a task.
+  </h3>
   <AddTask />
 
 

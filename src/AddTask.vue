@@ -1,12 +1,14 @@
 <script setup>
   import ToggleButton from './ToggleButton.vue';
+  import DeleteTask from './DeleteTask.vue';
 </script>
 <template>
 <div id="AddTask">
     
   <button @click="addTask">Add New Task</button>
     <ul>
-      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton /></li>
+      <li v-for="task in tasks" :key="task" @click="DeleteTask"> Task: {{ task }}<ToggleButton /></li>
+    
     </ul>
   </div>
 </template>
@@ -61,8 +63,10 @@ li {
   font-weight: 1000;
   color: #FFFFFF;
 }
+  li:hover{
+    background-color: #7A0B0B;
+    
+  }
 
-
-  
 </style>
 Option 3: M
