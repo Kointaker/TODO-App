@@ -8,7 +8,7 @@
   <button @click="addTask">Add New Task</button>
     <button @click="setVariable">Clear List</button>
     <ol>
-      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton />      <button @click="Delete">Delete Task</button></li>
+      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton />      <button @click="D">Delete Task</button></li>
 
     </ol>
   </div>
