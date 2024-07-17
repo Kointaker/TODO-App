@@ -15,7 +15,7 @@ import AddTask from './AddTask.vue';
 
 <h3 style="text-align: center;">
 INSTRUCTIONS:
-  press the Add New Task button to add a new task. Click the slider to mark a task as Complete. Press the Delete button to delete specific tasks. Press the Clear List button to delete ALL tasks.
+  Click the Add New Task button to add a new task. Click the slider to mark a task as Complete. Click the Delete button to delete specific tasks. Click the Clear List button to delete ALL tasks.
   </h3>
   <AddTask />
 

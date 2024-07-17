@@ -36,6 +36,8 @@ export default {
 
 <style>
 .switch {
+  display: flex;
+  justify-content: space-between;
   position: relative;
   display: inline-block;
   width: 50px;

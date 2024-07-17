@@ -8,7 +8,7 @@
   <button @click="addTask">Add New Task</button>
     <button @click="setVariable">Clear List</button>
     <ol>
-      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton />      <button @click="D">Delete Task</button></li>
+      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton />    <DeleteTask /></li>
 
     </ol>
   </div>
@@ -48,7 +48,7 @@
 <style>
 button {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   background-color: #000000;
   border: none;
   color: ghostwhite;
@@ -70,7 +70,10 @@ button:hover {
 ul {
   padding: 3;
 }
-
+  .deleter {
+    display: flex;
+    justify-content: flex-end;
+  }
 li {
   background: #7A3E3E;
   margin: 11px 0;
