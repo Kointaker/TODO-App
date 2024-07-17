@@ -1,14 +1,22 @@
+
 <template>
-  <label class="deleter">
-
-  </label>
+  <div class="task-item">
+    <span>{{ task.name }}</span>
+    <button @click="deleteTask">Delete</button>
+  </div>
 </template>
-<script>
 
- 
-  
+<script>
+export default {
+  props: ['task', 'index'],
+  methods: {
+    deleteTask() {
+      this.$emit('delete', this.index);
+    }
+  }
+}
 </script>
 
-<style>
-
+<style scoped>
+/* Add your CSS styles here */
 </style>

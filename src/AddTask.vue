@@ -3,18 +3,20 @@
   import DeleteTask from './DeleteTask.vue';
 </script>
 <template>
-<div id="AddTask">
+  <div id="AddTask">
     
   <button @click="addTask">Add New Task</button>
-    <ul>
-      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton /> </li>
-    
-    </ul>
+    <button @click="setVariable">Clear List</button>
+    <ol>
+      <li v-for="task in tasks" :key="task"> Task: {{ task }}<ToggleButton />      <button @click="Delete">Delete Task</button></li>
+
+    </ol>
   </div>
 </template>
 
 <script>
-export default {
+
+  export default {
   data() {
     return {
       tasks: []
@@ -27,13 +29,26 @@ export default {
         this.tasks.push(newTask);
       }
     }
-  }
-  
+  },
+  methods: {
+    addTask() {
+      let newTask = prompt('Please enter a new task:');
+      if (newTask) {
+        this.tasks.push(newTask);
+      }
+    },
+    setVariable() {
+      this.tasks = [];
+    }
+  },
+
 };
 </script>
 
-<style scoped>
+<style>
 button {
+  display: flex;
+  justify-content: end;
   background-color: #000000;
   border: none;
   color: ghostwhite;
@@ -45,6 +60,7 @@ button {
   margin: 10px 0;
   border-radius: 5px;
   cursor: pointer;
+
 }
 
 button:hover {
