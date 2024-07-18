@@ -14,6 +14,8 @@
 <script>
 import ToggleButton from './ToggleButton.vue';
 import DeleteTask from './DeleteTask.vue';
+import { onMounted } from 'vue';
+
 export default {
   components: {
     ToggleButton,
@@ -29,19 +31,30 @@ export default {
       let newTask = prompt('Please enter a new task:');
       if (newTask) {
         this.tasks.push(newTask);
-        localStorage.setItem('tasks', JSON.stringify(this.tasks));
       }
+      this.updateLocalStorage(); // Update local storage only once after the array is changed
     },
     setVariable() {
       this.tasks = [];
+      this.updateLocalStorage(); // Update local storage only once after the array is changed
     },
     deleteTask(index) {
       this.tasks.splice(index, 1);
+      this.updateLocalStorage(); // Update local storage only once after the array is changed
+    },
+    updateLocalStorage() {
       localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    }
+  },
+  mounted() {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      this.tasks = JSON.parse(storedTasks);
     }
   }
 };
 </script>
+
 
 <style>
 button {

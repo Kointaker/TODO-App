@@ -1,5 +1,7 @@
 
 <script setup>
+import { onMounted } from 'vue';
+
 const msg = 'To-do App';
 import AddTask from './AddTask.vue';
 
@@ -15,8 +17,15 @@ import AddTask from './AddTask.vue';
     Click the Add New Task button to add a new task. Click the slider to mark a task as Complete. Click the Delete button
     to delete specific tasks. Click the Clear List button to delete ALL tasks.
   </h3>
+  
+  
   <AddTask />
+
+
 </template>
+<script>
+  
+</script>
 
 <style scoped>
 h1 {

@@ -1,32 +1,20 @@
 
 <template>
   <label class="switch">
-    <input :checked="checked" @change="changeInput" @input="$emit('input', $event.target.checked)" value="1"
-      type="checkbox">
+    <input :checked="value" @change="toggle" value="1" type="checkbox">
     <span class="slider round" />
   </label>
 </template>
 <script>
 export default {
   props: {
-    value: { type: Boolean, default: false }
-  },
-  data() {
-    return {
-      checked: this.value
-    };
-  },
-  watch: {
-    checked(val) {
-      this.$emit("input", this.checked);
-    }
+    value: { type: Boolean, default: false },
   },
   methods: {
-    changeInput() {
-      this.checked = !this.checked;
-      this.$emit("input", !this.value);
-    }
-  }
+    toggle() {
+      this.$emit('input', !this.value); // Emit the updated value
+    },
+  },
 };
 </script>
 
