@@ -11,3 +11,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  button {
+   display: flex;
+  justify-content: flex-end;
+  }
+</style>
