@@ -1,11 +1,11 @@
 <template>
   <div id="AddTask">
     <button @click="addTask">Add New Task</button>
-    <button @click="setVariable">Clear List</button>
+    <button @click="Clear">Clear List</button>
     <ol>
       <li v-for="(task, index) in tasks" :key="index">
         Task: {{ task }}
-        <ToggleButton />
+        <ToggleButton :input="Start" @Start="toggle" />
         <DeleteTask :taskIndex="index" @delete-task="deleteTask" />
       </li>
     </ol>
@@ -32,24 +32,36 @@ export default {
       if (newTask) {
         this.tasks.push(newTask);
       }
-      this.updateLocalStorage(); // Update local storage only once after the array is changed
+      this.updateLocalStorage();
     },
-    setVariable() {
+    Clear() {
       this.tasks = [];
-      this.updateLocalStorage(); // Update local storage only once after the array is changed
+      this.updateLocalStorage();
     },
     deleteTask(index) {
       this.tasks.splice(index, 1);
-      this.updateLocalStorage(); // Update local storage only once after the array is changed
+      this.updateLocalStorage();
     },
     updateLocalStorage() {
       localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    },
+    updateLocalStorageToggle() {
+      localStorage.setItem('toggle', JSON.stringify(this.toggle));
+
+    },
+    toggle() {
+      this.$emit('input', !this.value); // Emit the updated value
+      this.updateLocalStorageToggle();
     }
   },
   mounted() {
-    const storedTasks = localStorage.getItem('tasks');
+    const storedTasks = localStorage.getItem('tasks')
+    const storedToggle = localStorage.getItem('toggle')
     if (storedTasks) {
       this.tasks = JSON.parse(storedTasks);
+      if (storedToggle) {
+        this.toggle = JSON.parse(storedToggle);
+      }
     }
   }
 };
@@ -102,10 +114,8 @@ li:hover {
 }
 
 .button2 {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-
-
 </style>
 Option 3: M

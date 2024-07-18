@@ -1,7 +1,7 @@
 
 <template>
   <label class="switch">
-    <input :checked="value" @change="toggle" value="1" type="checkbox">
+    <input :checked="value" @change="toggle;" value="1" type="checkbox">
     <span class="slider round" />
   </label>
 </template>
@@ -9,12 +9,7 @@
 export default {
   props: {
     value: { type: Boolean, default: false },
-  },
-  methods: {
-    toggle() {
-      this.$emit('input', !this.value); // Emit the updated value
-    },
-  },
+  }
 };
 </script>
 
