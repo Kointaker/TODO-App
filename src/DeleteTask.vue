@@ -1,14 +1,13 @@
 <template>
-  <div id="DeleteTask">
-    <button @click="D">Delete Task</button>
-  </div>
+  <button @click="$emit('delete-task', taskIndex)">Delete</button>
 </template>
 <script>
-
+export default {
+  props: {
+    taskIndex: {
+      type: Number,
+      required: true,
+    },
+  },
+};
 </script>
-<style scoped>
-.DeleteTask {
-  display: flex;
-  justify-content: space-between;
-}
-</style>

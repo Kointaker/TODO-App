@@ -3,19 +3,17 @@
     <button @click="addTask">Add New Task</button>
     <button @click="setVariable">Clear List</button>
     <ol>
-      <li v-for="(task, index) in tasks" :key="task">
+      <li v-for="(task, index) in tasks" :key="index">
         Task: {{ task }}
         <ToggleButton />
- 
-        <button id="button2" v-bind:taskIndex="index" @click="deleteTask">Delete</button> </li>
+        <DeleteTask :taskIndex="index" @delete-task="deleteTask" />
+      </li>
     </ol>
   </div>
 </template>
-
 <script>
 import ToggleButton from './ToggleButton.vue';
 import DeleteTask from './DeleteTask.vue';
-
 export default {
   components: {
     ToggleButton,
