@@ -12,6 +12,7 @@ import AddTask from './AddTask.vue';
     {{ msg }}
   </h1>
 
+
   <h3 style="text-align: center;">
     INSTRUCTIONS:
     Click the Add New Task button to add a new task. Click the slider to mark a task as Complete. Click the Delete button
