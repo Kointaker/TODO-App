@@ -4,17 +4,17 @@
     <button @click="Clear">Clear List</button>
     <ol>
       <li v-for="(task, index) in tasks" :key="index">
-        Task: {{ task }}
-        <ToggleButton :input="Start" @Start="toggle" />
+        Task: {{ task.text }}
+        <ToggleButton :modelValue="task.toggled" :index="index" @update:modelValue="updateToggle(index, $event)" />
         <DeleteTask :taskIndex="index" @delete-task="deleteTask" />
       </li>
     </ol>
   </div>
 </template>
+
 <script>
 import ToggleButton from './ToggleButton.vue';
 import DeleteTask from './DeleteTask.vue';
-import { onMounted } from 'vue';
 
 export default {
   components: {
@@ -30,13 +30,13 @@ export default {
     addTask() {
       let newTask = prompt('Please enter a new task:');
       if (newTask) {
-        this.tasks.push(newTask);
+        this.tasks.push({ text: newTask, toggled: false });
+        this.updateLocalStorage();
       }
-      this.updateLocalStorage();
     },
     Clear() {
       this.tasks = [];
-      this.updateLocalStorage();
+      localStorage.removeItem('tasks');
     },
     deleteTask(index) {
       this.tasks.splice(index, 1);
@@ -45,28 +45,19 @@ export default {
     updateLocalStorage() {
       localStorage.setItem('tasks', JSON.stringify(this.tasks));
     },
-    updateLocalStorageToggle() {
-      localStorage.setItem('toggle', JSON.stringify(this.toggle));
-
-    },
-    toggle() {
-      this.$emit('input', !this.value); // Emit the updated value
-      this.updateLocalStorageToggle();
+    updateToggle(index, toggled) {
+      this.tasks[index].toggled = toggled;
+      this.updateLocalStorage();
     }
   },
   mounted() {
-    const storedTasks = localStorage.getItem('tasks')
-    const storedToggle = localStorage.getItem('toggle')
+    const storedTasks = localStorage.getItem('tasks');
     if (storedTasks) {
       this.tasks = JSON.parse(storedTasks);
-      if (storedToggle) {
-        this.toggle = JSON.parse(storedToggle);
-      }
     }
   }
 };
 </script>
-
 
 <style>
 button {
@@ -83,7 +74,6 @@ button {
   margin: 10px 0;
   border-radius: 5px;
   cursor: pointer;
-
 }
 
 button:hover {
@@ -118,4 +108,3 @@ li:hover {
   justify-content: space-between;
 }
 </style>
-Option 3: M

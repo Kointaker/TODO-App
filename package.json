@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueform/toggle": "^2.1.4",
     "jsx": "^0.9.89",
     "primevue": "^4.0.0",
     "vue": "^3.3.4"
