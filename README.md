@@ -1,1 +1,2 @@
-# Todo APP using Vue.JS
+# ToDo App
+A To-Do App coded with Vue.JS
